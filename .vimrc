@@ -48,7 +48,7 @@ set cursorline
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|build$\|dist$\|.tmp$\|.vagrant$\|.sass-cache$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$',
   \ 'file': '\.so$\|\.dat$\|.swp$'
   \ }
 let g:ctrlp_show_hidden = 1
