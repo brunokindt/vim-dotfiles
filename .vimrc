@@ -62,7 +62,8 @@ let jshint2_save = 1
 "colorscheme badwolf
 let g:badwolf_darkgutter = 1
 let g:badwolf_darkbackground = 1
-colorscheme tomorrow2
+"colorscheme tomorrow2
+colorscheme badwolf
 
 syntax enable
 set complete+=kspell
