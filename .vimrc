@@ -43,9 +43,6 @@ set laststatus=2            " always show statusline
 set background=dark
 set cursorline
 
-" spell-checking
-:setlocal spell spelllang=en_us
-
 " CtrlP
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$',
@@ -64,6 +61,20 @@ let g:badwolf_darkgutter = 1
 let g:badwolf_darkbackground = 1
 "colorscheme tomorrow2
 colorscheme badwolf
+
+" syntactic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_eslint_exec = "~/Local/bin/eslint"
+let g:syntastic_javascript_checkers = ['eslint']
+
+" spell-checking
+:setlocal spell spelllang=en_us
 
 syntax enable
 set complete+=kspell
