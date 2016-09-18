@@ -1,7 +1,6 @@
 todo
 plato
 voronoi
-wifrt
 foo
 foo/!
 spell/!
@@ -9,3 +8,13 @@ nospell/!
 changelist/!
 principels/!
 Kindt
+API
+js
+fromJS
+OrderdMap
+OrderdSet
+Iterable
+nmcli
+wifi
+jshint
+eslint
