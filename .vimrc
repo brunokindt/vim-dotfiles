@@ -73,7 +73,7 @@ map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git -
 nnoremap <F12>c :exe ':silent !chromium-browser %<F12>'<CR>
 "
 autocmd BufNewFile,BufReadPost *.less setl filetype=less
-autocmd BufNewFile,BufReadPost *.md setl filetype=markdown shiftwidth=2 tabstop=2 spell textwidth=72 colorcolumn=72 wrap linebreak
+autocmd BufNewFile,BufReadPost *.md setl filetype=markdown shiftwidth=2 tabstop=2 spell textwidth=0 colorcolumn=72 wrap linebreak
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2
 autocmd BufNewFile,BufReadPost *.litcoffee setl shiftwidth=2 tabstop=2
 autocmd BufNewFile,BufReadPost Cakefile setl shiftwidth=2 tabstop=2
