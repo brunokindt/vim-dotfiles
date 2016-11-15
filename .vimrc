@@ -45,10 +45,19 @@ set cursorline
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|^build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$\|ebin$',
   \ 'file': '\.so$\|\.dat$\|.swp$'
   \ }
 let g:ctrlp_show_hidden = 1
+" let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'a'
+
+:let mapleader = ","
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+" @TODO find solution to pass current word to CtrlP
+" nnoremap <Leader>p :execute 'CtrlP ' . expand('<cword>')<Cr>
 
 set t_Co=256
 let g:solarized_termcolors=256
@@ -56,11 +65,10 @@ let g:solarized_termcolors=256
 " jshint2
 let jshint2_save = 1
 
-"colorscheme badwolf
 let g:badwolf_darkgutter = 1
 let g:badwolf_darkbackground = 1
-"colorscheme tomorrow2
-colorscheme badwolf
+colorscheme badwolf 
+
 
 " syntactic
 set statusline+=%#warningmsg#
@@ -73,15 +81,25 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_eslint_exec = "~/Local/bin/eslint"
 let g:syntastic_javascript_checkers = ['eslint']
 
+let g:ycm_server_log_level = 'info'
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 " spell-checking
 :setlocal spell spelllang=en_us
 
 syntax enable
 set complete+=kspell
 execute pathogen#infect()
-"
-map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git --exclude-from=exclude.list . -e " . expand("<cword>") . " " <bar> cwindow<CR>
-nnoremap <F12>c :exe ':silent !chromium-browser %<F12>'<CR>
+
+" call script on "K" press (replaces default "man" command)
+set keywordprg=vim-man-google.sh
+
+" @TODO fix 
+" nnoremap <F12>c :exe ':silent !google-chrome %<F12>'<CR>
+
+" Find current word in files
+map <F4> :execute " grep -srnw --binary-files=without-match --exclude-dir=.git . -e " . expand("<cword>") . " " <bar> cwindow<CR>
+
 "
 autocmd BufNewFile,BufReadPost *.less setl filetype=less
 autocmd BufNewFile,BufReadPost *.md setl filetype=markdown shiftwidth=2 tabstop=2 spell textwidth=0 colorcolumn=72 wrap linebreak
