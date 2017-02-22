@@ -45,7 +45,7 @@ set cursorline
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|^build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$\|ebin$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|^build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$\|ebin\|out$',
   \ 'file': '\.so$\|\.dat$\|.swp$'
   \ }
 let g:ctrlp_show_hidden = 1
@@ -83,6 +83,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 let g:ycm_server_log_level = 'info'
 let g:ycm_collect_identifiers_from_tags_files = 1
+" https://github.com/vim-syntastic/syntastic/issues/1246
+let g:ycm_show_diagnostics_ui = 0
 
 " spell-checking
 :setlocal spell spelllang=en_us
