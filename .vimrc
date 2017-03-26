@@ -45,10 +45,12 @@ set cursorline
 
 " CtrlP
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|build$\|dist$\|.tmp$\|coverage$\|platforms$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules$\|dist$\|.tmp$\|coverage$\|_boiler$\|platforms$\|plugins$\|bower_components$\|.vagrant$\|.sass-cache$\|out$\|^build$\|dst$',
   \ 'file': '\.so$\|\.dat$\|.swp$'
   \ }
 let g:ctrlp_show_hidden = 1
+" let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'a'
 
 set t_Co=256
 let g:solarized_termcolors=256
@@ -71,7 +73,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_eslint_exec = "~/Local/bin/eslint"
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_checkers = ['jshint']
 
 " spell-checking
 :setlocal spell spelllang=en_us
