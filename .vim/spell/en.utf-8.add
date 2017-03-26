@@ -27,3 +27,5 @@ jshint
 clickable
 lifecycle
 Strongloop
+yaml
+draggable
