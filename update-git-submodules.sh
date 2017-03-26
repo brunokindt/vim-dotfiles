@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# in case git submodule repo url is changes
+git submodule sync
+git submodule update --init --recursive
+git submodule foreach -q git config remote.origin.url
+# update submodule
 git submodule foreach git pull origin master
 
 # compile vim YouCompleteMe submodule
